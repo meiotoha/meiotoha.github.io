@@ -8,7 +8,7 @@ import { articleRoutesPlugin } from './src/plugins/article-routes-plugin'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/',
+  base: './',
   plugins: [
     vue(),
     vueJsx(),

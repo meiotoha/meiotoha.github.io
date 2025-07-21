@@ -3,7 +3,6 @@ import type { RouteRecordRaw } from 'vue-router'
 import type { ArticleMetadata, TagDictionary } from '@/types/article'
 
 // Article 1: In-depth Understanding of Vue 3 Reactivity
-// Article 2: README
 
 export const articleRoutes: RouteRecordRaw[] = [
   {
@@ -24,18 +23,6 @@ export const articleRoutes: RouteRecordRaw[] = [
           ],
           "abstract": "This article thoroughly analyzes the implementation principles of Vue 3’s reactivity system, with code examples and practical scenarios to help developers master reactive programming."
     }
-  },
-  {
-    path: '/article/2025/07/README',
-    name: 'article-2025-07-README',
-    component: () => import('../views/ArticleView.vue'),
-    props: () => ({ path: '2025/07/README.md' }),
-    meta:     {
-          "title": "README",
-          "date": "",
-          "slug": "2025/07/README",
-          "articlePath": "2025/07/README.md"
-    }
   }
 ]
 
@@ -55,15 +42,6 @@ export const articlesMetadata: ArticleMetadata[] = [
       "Reactivity"
     ],
     "abstract": "This article thoroughly analyzes the implementation principles of Vue 3’s reactivity system, with code examples and practical scenarios to help developers master reactive programming."
-  },
-    {
-    "path": "2025/07/README.md",
-    "title": "README",
-    "date": "",
-    "slug": "2025/07/README",
-    "year": "",
-    "month": "",
-    "day": ""
   }
 ]
 
@@ -135,21 +113,6 @@ export const tagDictionary: TagDictionary =   {
             "Reactivity"
           ],
           "abstract": "This article thoroughly analyzes the implementation principles of Vue 3’s reactivity system, with code examples and practical scenarios to help developers master reactive programming."
-        }
-      ]
-    },
-    "__NO_TAGS__": {
-      "name": "No tags to display",
-      "count": 1,
-      "articles": [
-        {
-          "path": "2025/07/README.md",
-          "title": "README",
-          "date": "",
-          "slug": "2025/07/README",
-          "year": "",
-          "month": "",
-          "day": ""
         }
       ]
     }

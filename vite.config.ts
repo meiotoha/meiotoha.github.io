@@ -8,7 +8,7 @@ import { articleRoutesPlugin } from './src/plugins/article-routes-plugin'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/',
   plugins: [
     vue(),
     vueJsx(),
@@ -26,6 +26,16 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html'
+      },
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('vue')) return 'vue-vendor'
+            if (id.includes('element-plus')) return 'element-plus'
+            if (id.includes('markdown')) return 'markdown-vendor'
+            return 'vendor'
+          }
+        }
       }
     }
   }

@@ -28,14 +28,7 @@ export default defineConfig({
         main: 'index.html'
       },
       output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('vue')) return 'vue-vendor'
-            if (id.includes('element-plus')) return 'element-plus'
-            if (id.includes('markdown')) return 'markdown-vendor'
-            return 'vendor'
-          }
-        }
+
       }
     }
   }

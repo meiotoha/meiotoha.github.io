@@ -41,8 +41,13 @@ const customAttrs: CustomAttrs = {
 
 <template>
   <Suspense>
-    <VueMarkdownAsync :markdown="props.content" :rehype-plugins="rehypePlugins" :remark-plugins="remarkPlugins"
-      :custom-attrs="customAttrs" />
+    <template #fallback>
+      <div class="loading"> ... </div>
+    </template>
+    <template #default>
+      <VueMarkdownAsync :markdown="props.content" :rehype-plugins="rehypePlugins" :remark-plugins="remarkPlugins"
+        :custom-attrs="customAttrs" />
+    </template>
   </Suspense>
 </template>
 

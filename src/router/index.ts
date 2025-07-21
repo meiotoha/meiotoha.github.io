@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import { articleRoutes } from './fileRouters'
 
 const router = createRouter({
@@ -8,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: ()=> import('../views/HomeView.vue'),
     },
     {
       path: '/about',
@@ -36,8 +35,13 @@ const router = createRouter({
     // 自动生成的文章路由
     ...articleRoutes,
     {
-      path: '/:catchAll(.*)',
+      path:'/404',
       name: 'not-found',
+      component: () => import('../views/NotFoundView.vue'),
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'not-found-fallback',
       component: () => import('../views/NotFoundView.vue'),
     },
   ],

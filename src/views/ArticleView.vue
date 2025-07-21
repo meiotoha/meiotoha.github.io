@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import MarkdownContent from '@/components/MarkdownContent.vue'
-import TocContainer from '@/components/TocContainer.vue'
+
+import { defineAsyncComponent } from 'vue'
 import { extractToc, type TocItem } from '@/utils/toc'
-import HeaderCom from '@/components/HeaderCom.vue'
+
+const MarkdownContent = defineAsyncComponent(() => import('@/components/MarkdownContent.vue'))
+const TocContainer = defineAsyncComponent(() => import('@/components/TocContainer.vue'))
+const HeaderCom = defineAsyncComponent(() => import('@/components/HeaderCom.vue'))
 
 import { inject } from 'vue'
 import type Strings from '@/i18n/strings'
